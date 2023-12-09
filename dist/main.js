@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("async function getData(cityName) {\n  const url = `https://api.weatherapi.com/v1/current.json?key=3a17f96e0f804dae97d211921230712&q=${cityName}`;\n  try {\n    const response = await fetch(url, { mode: \"cors\" });\n    if (!response.ok) {\n      throw new Error(\"City is not found!\");\n    }\n    const weatherData = await response.json();\n    return weatherData;\n  } catch (error) {\n    alert(error);\n  }\n}\n\nconst button = document.querySelector(\"#button\");\nconst city = document.querySelector(\"#city-name\");\n\nbutton.addEventListener(\"click\", (e) => {\n  e.preventDefault();\n  console.log(getData(city.value));\n});\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 

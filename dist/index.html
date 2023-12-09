@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div>
+        <form id="city-info">
+            <div>
+                <input type="text" id="city-name" placeholder="Enter a City Name" required>
+            </div>
+            <div>
+                <button type="submit" id="button">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="weather-info-container"></div>
 </body>
 </html>
