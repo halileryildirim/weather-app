@@ -1,4 +1,7 @@
+// Create weather object to contain the information from API
+
 const weatherApiHandler = (() => {
+  // Create weather object with required variables.
   class Weather {
     constructor(
       cityName,
@@ -26,6 +29,7 @@ const weatherApiHandler = (() => {
   }
 
   // conditionda hava durumu için icon yer alıyor fyi
+  // Update
   const useData = (data) => {
     const cityName = data.location.name;
     const location = data.location.country;
