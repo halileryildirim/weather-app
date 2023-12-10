@@ -1,21 +1,15 @@
-async function getData(cityName) {
-  const url = `https://api.weatherapi.com/v1/current.json?key=3a17f96e0f804dae97d211921230712&q=${cityName}`;
-  try {
-    const response = await fetch(url, { mode: "cors" });
-    if (!response.ok) {
-      throw new Error("City is not found!");
-    }
-    const weatherData = await response.json();
-    return weatherData;
-  } catch (error) {
-    alert(error);
-  }
-}
+// module kullanarak başka bir dosyada apiden verileri alıp bu verileri weather objesine özellik olarak ileteceğiz.
+// örn şehir.sıcaklık : weatherdata.sıcaklık, şehir.hava-durumu: weather.hava durumu etc
+// bu ilettiğimiz veri ile başka bir JS dosyası DOM oluşturacak, default KEÇİÖREN olacak.
+// Mevcut sıcaklık, havadaki olay(yağmur, güneş bulut vs), hissedilen sıcaklık, rüzgar, nem gösterecek.
+// Mevcut sıcaklığı aynı zamanda fahrenheit olarak alan bir sistem yap(nasıl bilmiyom düşün. mal.)
+
+import weatherApiHandler from "./weatherApiHandler";
 
 const button = document.querySelector("#button");
 const city = document.querySelector("#city-name");
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(getData(city.value));
+  console.log(weatherApiHandler.getData(city.value));
 });
