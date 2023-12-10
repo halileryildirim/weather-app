@@ -28,7 +28,7 @@ const weatherApiHandler = (() => {
   // conditionda hava durumu için icon yer alıyor fyi
   const useData = (data) => {
     const cityName = data.location.name;
-    const location = data.location.region;
+    const location = data.location.country;
     const tempC = data.current.temp_c;
     const feelsLikeTempC = data.current.feelslike_c;
     const tempF = data.current.temp_f;
