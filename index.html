@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather APP</title>
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <div id="header">
+        <p>Weather App</p>
+    </div>
+    <div id="form">
         <form id="city-info">
             <div>
                 <input type="text" id="city-name" placeholder="Enter a City Name" required>
             </div>
             <div>
-                <button type="submit" id="save-button">Submit</button>
+                <button type="submit" id="save-button">SEARCH</button>
             </div>
         </form>
     </div>
-    <div id="weather-info-container" class="us-standard">
-        <div id="city-info"></div>
+    <div id="weather-info-container" class="metrics">
+        <div id="city-info-render"></div>
     </div>
+    <div>
+        <button id="metric-change-btn">°C / °F</button>
+    </div>
+    <div id="footer">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></div>
 </body>
 </html>
