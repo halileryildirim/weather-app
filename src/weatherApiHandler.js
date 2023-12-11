@@ -13,7 +13,8 @@ const weatherApiHandler = (() => {
       weatherEvent,
       humid,
       windKmh,
-      windMph
+      windMph,
+      imgSource
     ) {
       this.cityName = cityName;
       this.location = location;
@@ -25,6 +26,7 @@ const weatherApiHandler = (() => {
       this.humid = humid;
       this.windKmh = windKmh;
       this.windMph = windMph;
+      this.imgSource = imgSource;
     }
   }
 
@@ -40,6 +42,7 @@ const weatherApiHandler = (() => {
     const humid = data.current.humidity;
     const windKmh = data.current.wind_kph;
     const windMph = data.current.wind_mph;
+    const wEventImg = data.current.condition.icon;
 
     const weather = new Weather(
       cityName,
@@ -51,7 +54,8 @@ const weatherApiHandler = (() => {
       weatherEvent,
       humid,
       windKmh,
-      windMph
+      windMph,
+      wEventImg
     );
 
     return weather;

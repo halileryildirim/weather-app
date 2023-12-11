@@ -15,9 +15,13 @@ const domHandler = (() => {
     cityMainInfo.appendChild(name);
 
     const cityEvent = document.createElement("p");
-    cityEvent.id = "city-weather-event";
     cityEvent.innerText = data.weatherEvent;
     cityMainInfo.appendChild(cityEvent);
+
+    const cityEventImg = new Image(128, 128);
+    cityEventImg.src = `https:${data.imgSource}`;
+    cityMainInfo.appendChild(cityEventImg);
+
     // container class decides if the data shows as Fahrenheit mph or Celcius kmh
     if (mainContainer.classList.contains("metrics")) {
       const cityTempC = document.createElement("div");
