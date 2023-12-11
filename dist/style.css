@@ -6,8 +6,8 @@ body {
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    background-color:rgb(86, 127, 217);
     height: 100vh;
+    overflow: hidden;
 }
 
 #header {
@@ -15,15 +15,18 @@ body {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    font-size: 48px;
     text-align: center;
     background-color: rgb(19, 19, 25);  
     width: 100%;
     color: white;
+    padding: 32px;
 }
 
-#header > p {
-    padding: 0;
+#city-info-render {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #city-info {
@@ -43,20 +46,20 @@ body {
     width: fit-content;
     padding: 24px;
     border-radius: 8px;
-    color: white;
+    color: black;
 }
 
-#weather-info-container {
-    height: 40%;
+p {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #footer {
     margin-top: auto;
-    color: white;
 }
 
 #footer > a {
-    color: white;
+    color: black;
 }
 
 button {
