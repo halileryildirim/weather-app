@@ -34,7 +34,6 @@ body {
     margin-top: 48px;
 }
 
-
 #weather-info-container > div {
     display: flex;
     flex-direction: column;
