@@ -1,9 +1,4 @@
-// module kullanarak başka bir dosyada apiden verileri alıp bu verileri weather objesine özellik olarak ileteceğiz. ++
-// örn şehir.sıcaklık : weatherdata.sıcaklık, şehir.hava-durumu: weather.hava durumu etc ++
-// bu ilettiğimiz veri ile başka bir JS dosyası DOM oluşturacak, default KEÇİÖREN olacak.
-// Mevcut sıcaklık, havadaki olay(yağmur, güneş bulut vs), hissedilen sıcaklık, rüzgar, nem gösterecek.
-// Mevcut sıcaklığı aynı zamanda fahrenheit olarak alan bir sistem yap(nasıl bilmiyom düşün. mal.)
-
+// Call the DOM updater to add functionality to page
 import domHandler from "./domHandler";
 
 domHandler.domUpdater();

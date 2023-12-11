@@ -1,6 +1,8 @@
+// Create and add functionality to buttons and elements
 import weatherApiHandler from "./weatherApiHandler";
 
 const domHandler = (() => {
+  // get an object, create and append the container with object data
   const domLoader = (data) => {
     const mainContainer = document.querySelector("#weather-info-container");
     const cityMainInfo = document.querySelector("#city-info-render");
@@ -16,7 +18,7 @@ const domHandler = (() => {
     cityEvent.id = "city-weather-event";
     cityEvent.innerText = data.weatherEvent;
     cityMainInfo.appendChild(cityEvent);
-
+    // container class decides if the data shows as Fahrenheit mph or Celcius kmh
     if (mainContainer.classList.contains("metrics")) {
       const cityTempC = document.createElement("div");
       cityTempC.innerText = `Temperature: ${data.tempC} °C`;
@@ -46,7 +48,7 @@ const domHandler = (() => {
     cityHumidity.innerText = `Humidity: ${data.humid}%`;
     cityMainInfo.appendChild(cityHumidity);
   };
-
+  // create an async function to call the result from apihandler
   async function domUpdater() {
     const button = document.querySelector("#save-button");
     const metricBtn = document.querySelector("#metric-change-btn");
@@ -54,6 +56,7 @@ const domHandler = (() => {
 
     metricBtn.addEventListener("click", async () => {
       const mainContainer = document.querySelector("#weather-info-container");
+      // update container metric system according to latest container type
       if (mainContainer.classList.contains("metrics")) {
         mainContainer.classList = "us-standard";
         if (city.value !== "") {
@@ -68,7 +71,7 @@ const domHandler = (() => {
         }
       }
     });
-
+    // prevent button from trying to submit to form and check if form is filled
     button.addEventListener("click", async (e) => {
       if (document.querySelector("#city-info").checkValidity()) {
         e.preventDefault();

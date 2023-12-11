@@ -28,8 +28,7 @@ const weatherApiHandler = (() => {
     }
   }
 
-  // conditionda hava durumu için icon yer alıyor fyi
-  // Update
+  // Update object with API data.
   const useData = (data) => {
     const cityName = data.location.name;
     const location = data.location.country;
@@ -57,11 +56,13 @@ const weatherApiHandler = (() => {
 
     return weather;
   };
+  // use an async function to fetch the api data
 
   async function getData(cityName) {
     const url = `https://api.weatherapi.com/v1/current.json?key=3a17f96e0f804dae97d211921230712&q=${cityName}`;
     try {
       const response = await fetch(url, { mode: "cors" });
+      // prevent errors from passing the try/catch
       if (!response.ok) {
         throw new Error("City is not found!");
       }
